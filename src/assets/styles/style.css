@@ -46,7 +46,7 @@
     opacity: 0.4;
 }
 .submit-button {
-    background: linear-gradient(to right, #e64cdb, #7a1fd0);
+    background: linear-gradient(to right, #4245b0, #ee2bf2);
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
     font-weight: 500;
@@ -70,7 +70,7 @@
     padding: 0;
     display: flex;
     gap: 10px;
-    background: linear-gradient( rgb(199, 87, 156), #53a4af);
+    background: linear-gradient( #4245b0, #ee2bf2);
   }
   
   .breadcrumbs li {
