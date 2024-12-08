@@ -2,6 +2,7 @@
 @import "./fonts.css";
 @import "./utils.css";
 
+
 .test {
     color: yellow !important;
 }
@@ -9,3 +10,82 @@
 .test {
     color: red !important;
 }
+
+.paragraph {
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
+}
+
+.heading-h1 {
+    font-size: 64px;
+    color: #1F3F68;
+}
+
+.heading-h2 {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
+
+.heading-h3 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.heading-h4 {
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;
+}
+
+.input-field {
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;
+}
+.submit-button {
+    background: linear-gradient(to right, #e64cdb, #7a1fd0);
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    background-image: url('../img/background-contacts.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+.breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    background: linear-gradient( rgb(199, 87, 156), #53a4af);
+  }
+  
+  .breadcrumbs li {
+    font-size: 30px;
+  }
+  
+  .breadcrumbs li:not(:last-child)::after {
+    content: " )";
+  }
+  
+  .breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
