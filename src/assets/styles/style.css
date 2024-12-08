@@ -110,6 +110,7 @@ ul li:not(:last-child) {
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
+    background-image: url('assets/img/contact.jpg')
 }
 
 .contact-form label {
@@ -151,7 +152,7 @@ ul li:not(:last-child) {
 /* Блок с вопросами */
 .faq {
     background: #f9f9f9;
-    border-left: 5px solid #c088ff;
+    border-left: 5px solid #0f97d6;
 }
 
 .faq ul {
@@ -174,8 +175,6 @@ ul li:not(:last-child) {
     border: none;
     font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
@@ -189,14 +188,3 @@ footer {
     color: white;
 }
 
-/* Анимация для появления блоков при прокрутке страницы */
-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
