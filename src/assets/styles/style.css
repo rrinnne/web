@@ -103,6 +103,16 @@ ul li:not(:last-child) {
     margin: 20px auto;
 }
 
+.contact-us {
+    background-image: url('assets/img/contact.jpg'); /* Путь к вашей картинке */
+    background-size: cover; /* Растягивает картинку на весь фон */
+    background-position: center; /* Центрирует картинку */
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #2d68b2; /* Цвет текста, чтобы он контрастировал с фоном */
+}
+
 /* Стили для формы */
 .contact-form {
     display: flex;
@@ -110,7 +120,6 @@ ul li:not(:last-child) {
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-image: url('assets/img/contact.jpg')
 }
 
 .contact-form label {
