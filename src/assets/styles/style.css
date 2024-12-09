@@ -2,7 +2,6 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-/* Основные стили для страницы */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -20,7 +19,6 @@ h3, h4 {
     color: #444;
 }
 
-/* Заголовки блоков */
 section {
     padding: 40px 20px;
     margin: 20px auto;
@@ -33,7 +31,7 @@ section {
 section h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #2d68b2; /* Синий оттенок для заголовков */
+    color: #2d68b2; 
 }
 
 section p {
@@ -42,7 +40,6 @@ section p {
     color: #555;
 }
 
-/* Блок "Начальная" (intro) */
 .intro {
     background: linear-gradient(135deg, #3443b8, #9bc4fd);
     color: #fff;
@@ -62,7 +59,6 @@ section p {
     color: #dce4ff;
 }
 
-/* Стили для ссылок */
 a {
     color: #2d68b2;
     text-decoration: none;
@@ -72,7 +68,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Картинки */
 .product-image {
     max-width: 100%;
     height: auto;
@@ -93,21 +88,17 @@ a:hover {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     max-width: 600px;
     margin: 0 auto;
-    background-image: url('assets/img/contact.png'); /* Установите картинку на саму форму */
-    background-size: cover; /* Растягиваем картинку по всей форме */
-    background-position: center; /* Центрируем картинку */
     padding: 20px;
     border-radius: 10px;
-    background-repeat: no-repeat; /* Изображение не повторяется */
-    color: #9c6c6c; /* Белый цвет текста для контраста */
+    color: #f7f7f7; 
 }
 
 .contact-form label {
     font-size: 18px;
-    color: #b98787; /* Цвет текста для меток */
+    color: #2d68b2; 
 }
 
 .contact-form input,
@@ -118,6 +109,7 @@ a:hover {
     font-size: 16px;
 }
 
+
 .contact-form button {
     background-color: #2d68b2;
     color: #fff;
@@ -126,6 +118,7 @@ a:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    padding-left: 40px; 
 }
 
 .contact-form button:hover {
@@ -135,8 +128,8 @@ a:hover {
 
 /* Новинки блок */
 .new-releases {
-    background: #f0f8ff;
-    border-left: 5px solid #2c00a7;
+    background: #d8e7f5;
+    border-left: 5px solid #2023ce;
 }
 
 .new-releases p {
@@ -171,14 +164,14 @@ footer {
 
 .about-us {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Две колонки: одна для текста, одна для изображения */
-    gap: 20px; /* Расстояние между колонками */
-    align-items: center; /* Вертикальное выравнивание */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    align-items: center; 
     padding: 20px;
     background: #f9f9f9;
     border-radius: 10px;
     max-width: 100%;
-    margin: 0 auto; /* Центруем блок на странице */
+    margin: 0 auto; 
 }
 
 .about-us-content {
@@ -186,10 +179,89 @@ footer {
 }
 
 .about-us img {
-    max-width: 100%; /* Картинка адаптируется по ширине колонки */
-    height: auto; /* Сохраняем пропорции картинки */
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    justify-self: end; /* Размещаем изображение справа */
-    object-fit: cover; /* Показываем картинку, сохраняя пропорции */
+    justify-self: end;
+    object-fit: cover;
+}
+
+.other-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.other-projects-content {
+    text-align: center;
+}
+
+.other-projects img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-self: end;
+    object-fit: cover;
+}
+
+.other-projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.other-projects ul li {
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.team ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team ul li {
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.team ul li::before {
+    content: "★";
+    font-size: 24px;
+    color: #2d68b2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.what-we-do ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.what-we-do ul li {
+    font-size: 18px;
+    padding: 10px 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.what-we-do ul li::before {
+    content: "✔";
+    font-size: 24px;
+    color: #2d68b2;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
