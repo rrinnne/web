@@ -2,14 +2,6 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-.test {
-    color: yellow !important;
-}
-
-.test {
-    color: red !important;
-}
-
 /* Основные стили для страницы */
 body {
     font-family: 'Arial', sans-serif;
@@ -52,7 +44,7 @@ section p {
 
 /* Блок "Начальная" (intro) */
 .intro {
-    background: linear-gradient(135deg, #5b6cf5, #4d90f0);
+    background: linear-gradient(135deg, #3443b8, #9bc4fd);
     color: #fff;
     text-align: center;
     padding: 50px 20px;
@@ -61,11 +53,13 @@ section p {
 .intro h1 {
     font-size: 48px;
     font-weight: bold;
+    color: #fcfcfc;
 }
 
 .intro p {
     font-size: 22px;
     margin-top: 20px;
+    color: #dce4ff;
 }
 
 /* Стили для ссылок */
@@ -76,21 +70,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-/* Стили для списка */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 18px;
-    padding: 10px 0;
-}
-
-ul li:not(:last-child) {
-    border-bottom: 1px solid #eee;
 }
 
 /* Картинки */
@@ -104,29 +83,35 @@ ul li:not(:last-child) {
 }
 
 .contact-us {
-    background-image: url('assets/img/contact.jpg'); /* Путь к вашей картинке */
-    background-size: cover; /* Растягивает картинку на весь фон */
-    background-position: center; /* Центрирует картинку */
     padding: 50px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #2d68b2; /* Цвет текста, чтобы он контрастировал с фоном */
+    color: #fff; /* Белый цвет текста */
+    text-align: center;
 }
 
-/* Стили для формы */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
+    background-image: url('assets/img/contact.png'); /* Установите картинку на саму форму */
+    background-size: cover; /* Растягиваем картинку по всей форме */
+    background-position: center; /* Центрируем картинку */
+    padding: 20px;
+    border-radius: 10px;
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    color: #9c6c6c; /* Белый цвет текста для контраста */
 }
 
 .contact-form label {
     font-size: 18px;
+    color: #b98787; /* Цвет текста для меток */
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -147,10 +132,11 @@ ul li:not(:last-child) {
     background-color: #9cc1f1;
 }
 
+
 /* Новинки блок */
 .new-releases {
     background: #f0f8ff;
-    border-left: 5px solid #9ff993;
+    border-left: 5px solid #2c00a7;
 }
 
 .new-releases p {
@@ -176,20 +162,6 @@ ul li:not(:last-child) {
     color: #2d68b2;
 }
 
-/* Добавление интересных эффектов на кнопки */
-.submit-button {
-    background-color: #ff6efa;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.submit-button:hover {
-    background-color: #c57075;
-}
-
 footer {
     text-align: center;
     padding: 20px;
@@ -197,3 +169,27 @@ footer {
     color: white;
 }
 
+.about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки: одна для текста, одна для изображения */
+    gap: 20px; /* Расстояние между колонками */
+    align-items: center; /* Вертикальное выравнивание */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto; /* Центруем блок на странице */
+}
+
+.about-us-content {
+    text-align: center; /* Центруем текст */
+}
+
+.about-us img {
+    max-width: 100%; /* Картинка адаптируется по ширине колонки */
+    height: auto; /* Сохраняем пропорции картинки */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-self: end; /* Размещаем изображение справа */
+    object-fit: cover; /* Показываем картинку, сохраняя пропорции */
+}
