@@ -5,10 +5,8 @@
 
 .block__welcome-content {
     margin-top: 160px;
-
     width: 600px;
     height: 220px;
-
     display: grid;
     gap: 24px;
 }
@@ -37,14 +35,11 @@
 
 .block__welcome-form {
     margin-top: 64px;
-
     width: fit-content;
     border-radius: 12px;
     padding: 24px;
-
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.08);
     background: #fff;
-
     display: grid;
     gap: 32px;
 }
@@ -63,7 +58,6 @@
 .form__welcome {
     width: 628px;
     height: 58px;
-
     display: flex;
     gap: 24px;
 }
@@ -87,7 +81,6 @@
 .form__welcome-content input {
     border: none;
     border-bottom: solid 0.7px #d0d5dd;
-
     font-family: "SF Pro Text Regular", sans-serif;
     font-weight: 400;
     font-size: 17px;
@@ -102,10 +95,8 @@
     padding: 11px 24px;
     width: 132px;
     height: 58px;
-
     cursor: pointer;
     background: #2d66ee;
-
     text-align: left;
     font-family: "SF Pro Text Semibold", sans-serif;
     font-weight: 600;

@@ -1,20 +1,16 @@
 .header {
-    border-radius: 12px;
     padding: 16px 24px;
-
-    width: fit-content;
-    
+    border-radius: 12px;
     position: sticky;
     top: 24px;
-
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    width: fit-content;
     background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
-.header__content{
-    display: flex;
+.header__content {
     gap: 80px;
-
+    display: flex;
     align-items: center;
 }
 
@@ -22,49 +18,44 @@
     font-family: "Inter Bold", sans-serif;
     font-weight: 700;
     font-size: 20px;
-
-    text-transform: uppercase;
-    line-height: 18px;
     letter-spacing: -0.15px;
+    line-height: 18px;
+    text-transform: uppercase;
     text-decoration: none;
-
     color: #2d66ee;
 }
 
 .header__links {
-    display: flex;
     gap: 24px;
+    display: flex;
 }
 
 .header__link, .header__contact-content a {
     font-family: "SF Pro Text Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
-
     line-height: 18px;
     letter-spacing: -0.15px;
     text-decoration: none;
-
     color: #101828;
 }
 
 .header__contacts {
-    display: flex;
     gap: 32px;
+    display: flex;
 }
 
 .header__contact {
-    display: flex;
     gap: 8px;
-
+    display: flex;
     align-items: center;
 }
 
 .header__contact-content {
-    display: flex;
     gap: 16px;
+    display: flex;
 }
 
 .header__contact-content a {
-    color: #2D66EE;
+    color: #2d66ee;
 }
