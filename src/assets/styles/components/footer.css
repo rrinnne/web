@@ -3,13 +3,15 @@
     padding: 24px;
     margin-top: auto;
     margin-bottom: 48px;
+
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.08), 0 0 2px 0 rgba(0, 0, 0, 0.08);
     background: #101828;
-    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08), 0 0 2px rgba(0, 0, 0, 0.08);
 }
 
 .footer__content {
     display: grid;
-    gap: 40px;
+    grid-gap: 40px;
+
     align-items: center;
 }
 
@@ -17,38 +19,45 @@
     font-family: "Inter Bold", sans-serif;
     font-weight: 700;
     font-size: 36px;
-    line-height: 1;
+    
+    line-height: 50%;
+    letter-spacing: 0em;
     color: #fff;
+    
+    text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    text-decoration: none;
 }
 
 .footer__contacts {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
-    justify-content: space-between;
+
+    row-gap: 32px;
 }
 
 .footer__contact {
     display: grid;
     gap: 8px;
+
     flex: 1;
     min-width: 160px;
 }
 
 .footer__contact-title {
     display: flex;
-    align-items: center;
     gap: 8px;
+
+    align-items: center;
 }
 
-.footer__contact-title p {
+.footer__contact-title p{
     font-family: "SF Pro Text Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    line-height: 1.29;
+
+    line-height: 18px;
+    letter-spacing: -0.15px;
     color: #98a2b3;
 }
 
@@ -56,36 +65,42 @@
     font-family: "SF Pro Text Semibold", sans-serif;
     font-weight: 600;
     font-size: 17px;
-    line-height: 1.29;
-    color: #fff;
+
+    line-height: 22px;
+    letter-spacing: -0.41px;
+    color: #FFFFFF;
+
     text-decoration: none;
 }
 
 .footer__end {
     display: flex;
+    gap: 12px;
+
     align-items: center;
     justify-content: center;
-    gap: 12px;
 }
 
 .footer__end-text {
     font-family: "SF Pro Text Regular", sans-serif;
     font-weight: 400;
     font-size: 13px;
-    line-height: 1.23;
-    color: #fff;
+    line-height: 16px;
+    letter-spacing: -0.08px;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 1023px) {
     .footer {
         padding: 46px 32px;
-        margin-bottom: 0;
         width: 100%;
+
+        margin-bottom: 0;
         margin-left: -32px;
     }
 
     .footer__content {
-        gap: 32px;
+        grid-gap: 32px;
     }
 
     .footer__contact-content {
@@ -100,7 +115,7 @@
     }
 
     .footer__content {
-        gap: 52px;
+        grid-gap: 52px;
     }
 
     .footer__title {

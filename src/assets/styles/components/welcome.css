@@ -1,11 +1,13 @@
 .block__welcome {
     margin-top: -56px;
     height: 900px;
+
 }
 
 .block__welcome-content {
     margin-top: 160px;
-    max-width: 600px;
+
+    width: 600px;
     height: 220px;
 
     display: grid;
@@ -16,7 +18,7 @@
     font-family: "Inter Bold", sans-serif;
     font-weight: 700;
     font-size: 36px;
-    line-height: 1.44;
+    line-height: 144%;
     letter-spacing: 0.33px;
     color: #101828;
 }
@@ -29,19 +31,20 @@
     font-family: "SF Pro Text Medium", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    line-height: 1.33;
+    line-height: 20px;
     letter-spacing: -0.24px;
     color: #101828;
 }
 
 .block__welcome-form {
     margin-top: 64px;
-    width: max-content;
+
+    width: fit-content;
     border-radius: 12px;
     padding: 24px;
 
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.08);
     background: #fff;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.16), 0 0 2px rgba(0, 0, 0, 0.08);
 
     display: flex;
     flex-direction: column;
@@ -49,18 +52,18 @@
 }
 
 .block__welcome-subtitle {
-    max-width: 600px;
+    width: 600px;
 
     font-family: "Inter Bold", sans-serif;
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 24px;
     letter-spacing: 0.38px;
     color: #101828;
 }
 
 .form__welcome {
-    max-width: 628px;
+    width: 628px;
     height: 58px;
 
     display: flex;
@@ -68,44 +71,48 @@
 }
 
 .form__welcome-content {
-    flex: 1;
     display: grid;
     gap: 8px;
+
+    flex: 1;
 }
 
 .form__welcome-content label {
     font-family: "SF Pro Text Medium", sans-serif;
     font-weight: 500;
     font-size: 13px;
-    line-height: 1.23;
+    line-height: 16px;
     letter-spacing: -0.08px;
     color: #667085;
 }
 
 .form__welcome-content input {
     border: none;
-    border-bottom: 0.7px solid #d0d5dd;
+    border-bottom: solid 0.7px #d0d5dd;
 
     font-family: "SF Pro Text Regular", sans-serif;
     font-weight: 400;
     font-size: 17px;
-    line-height: 1.29;
+    line-height: 22px;
     letter-spacing: -0.41px;
     color: #101828;
 }
 
 .form__welcome button {
     border-radius: 8px;
+    border: 0px;
     padding: 11px 24px;
+    width: 132px;
+    height: 58px;
 
-    background: #2d66ee;
     cursor: pointer;
+    background: #2d66ee;
 
     text-align: left;
     font-family: "SF Pro Text Semibold", sans-serif;
     font-weight: 600;
     font-size: 14px;
-    line-height: 1.29;
+    line-height: 18px;
     letter-spacing: -0.15px;
     color: #fff;
 }
@@ -117,8 +124,8 @@
     transform: translateX(-50%);
     z-index: -1;
 
-    width: 100%;
     max-width: 1440px;
+    width: 100%;
     height: 900px;
     overflow: hidden;
 }
@@ -142,7 +149,8 @@
 
     .block__welcome-content {
         margin-top: 138px;
-        max-width: 382px;
+    
+        width: 382px;
         height: 204px;
     }
 
@@ -153,17 +161,23 @@
     .block__welcome-form {
         margin-top: 32px;
         padding: 32px;
-        max-width: 382px;
+
+        width: 382px;
         height: 356px;
+
+        box-sizing: border-box;
     }
 
     .block__welcome-subtitle {
-        max-width: 295px;
+        width: 295px;
+
         font-size: 16px;
     }
 
     .form__welcome {
-        max-width: 295px;
+        width: 295px;
+    
+        display: flex;
         flex-direction: column;
         gap: 32px;
     }
@@ -171,6 +185,8 @@
     .form__welcome button {
         width: fit-content;
         height: 40px;
+    
+        text-align: left;
     }
 
     .block__welcome-image {
@@ -190,11 +206,12 @@
 
     .block__welcome-form {
         margin-top: 536px;
-        max-width: 392px;
+
+        width: 392px;
     }
 
     .form__welcome {
-        max-width: 224px;
+        width: 224px;
     }
 
     .block__welcome-image {
