@@ -1,19 +1,15 @@
 .block__devcycle {
     background-color: #ffffff;
-
     margin-left: -108px;
     margin-right: -108px;
     padding: 80px 108px;
-
     width: 100%;
-
     display: flex;
     gap: 128px;
 }
 
 .block__devcycle-leftblock {
     width: 600px;
-
     display: grid;
     gap: 34px;
 }
@@ -43,7 +39,6 @@
 
 .block__devcycle-tech {
     width: 496px;
-
     display: grid;
     gap: 16px;
 }
@@ -76,10 +71,8 @@
 
 .block__devcycle-item {
     padding: 12px 0;
-
     display: flex;
     gap: 12px;
-
     align-items: center;
     width: fit-content;
 }
@@ -91,7 +84,6 @@
     line-height: 24px;
     letter-spacing: 0.38px;
     color: #1d2939;
-
     text-decoration: none;
     cursor: pointer;
 }
@@ -100,7 +92,6 @@
     font-family: "SF Pro Display Semibold", sans-serif;
     font-weight: 600;
     color: #101828;
-
     border-bottom: solid 1px #2d66ee;
 }
 
@@ -108,7 +99,6 @@
     .block__devcycle {
         margin-left: -80px;
         margin-right: -80px;
-    
         padding: 80px;
     }
 }
@@ -117,16 +107,13 @@
     .block__devcycle {
         margin-left: -32px;
         margin-right: -32px;
-    
         padding: 32px;
-    
         gap: 82px;
     }
 
     .block__devcycle-leftblock {
         margin-left: 40px;
         width: 320px;
-
         gap: 32px;
     }
 
@@ -147,9 +134,7 @@
     .block__devcycle {
         margin-left: -16px;
         margin-right: -16px;
-    
         padding: 32px 16px;
-        
         flex-direction: column;
         gap: 32px;
     }
@@ -160,7 +145,6 @@
 
     .block__devcycle-enum {
         font-size: 14px;
-
         width: 278px;
     }
 }
