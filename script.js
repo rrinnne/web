@@ -79,7 +79,7 @@ function init() {
                         ]
                     },
                     {
-                        name: 'Vigro Glass',
+                        name: 'Vigro Mramor',
                         hasChildren: false,
                         items: []
                     },
@@ -89,55 +89,59 @@ function init() {
     }
 
 
-    const items = new ListItems(document.getElementById('list-items'), data)
+    const items = new ListItems(document.getElementById('list-items'), data);
     items.render();
     items.init();
 
     function ListItems(el, data) {
         this.el = el;
         this.data = data;
-
+    
         this.init = function () {
-            this.el.addEventListener('click', (event) => {
-                const arrow = event.target.closest('[data-open]');
-                if (arrow) {
-                    const parent = arrow.closest('[data-parent]');
-                    this.toggleItems(parent);
+            const parents = this.el.querySelectorAll('[data-parent]')
+    
+            parents.forEach(parent => {
+                const open = parent.querySelector('[data-open]')
+    
+                open.addEventListener('click', () => this.toggleItems(parent) )
+            })
+        }
+    
+        this.render = function () {
+            this.el.insertAdjacentHTML('beforeend', this.renderParent(this.data))
+        }
+    
+        this.renderParent = function (data) {
+            let html = '';
+    
+            data.forEach(item => {
+                if (item.hasChildren) {
+                    html += `
+                        <div class="list-item" data-parent>
+                            <div class="list-item-header" data-open>${item.name}</div>
+                            <div class="list-item-children">
+                                ${this.renderParent(item.children)}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    html += this.renderChildren(item);
                 }
             });
-        };
-
-        this.render = function () {
-            this.el.innerHTML = this.renderParent(this.data);
-        };
-
-        // Рендеринг узлов
-        this.renderParent = function (data) {
-            let html = `
-                <div class="list-item" data-parent>
-                    <div class="list-item__inner">
-                        <div class="list-item__arrow-container">
-                            ${data.hasChildren ? '<img class="list-item__arrow" src="img/chevron-down.png" alt="chevron-down" data-open>' : ''}
-                        </div>
-                        <img class="list-item__folder" src="img/folder.png" alt="folder">
-                        <span class="list-item__text">${data.name}</span>
-                    </div>`;
-
-            if (data.hasChildren) {
-                html += '<div class="list-item__items">';
-                data.items.forEach(item => {
-                    html += this.renderParent(item); // Рекурсия
-                });
-                html += '</div>';
-            }
-
-            html += '</div>';
+    
             return html;
-        };
-
-        // Метод переключения класса
+        }
+    
+        this.renderChildren = function (item) {
+            return `
+                <div class="list-item" data-item>
+                    ${item.name}
+                </div>
+            `;
+        }
+    
         this.toggleItems = function (parent) {
-            parent.classList.toggle('list-item_open');
-        };
+            parent.classList.toggle('list-item_open')
+        }
     }
 }
