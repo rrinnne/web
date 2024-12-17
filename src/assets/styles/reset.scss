@@ -19,23 +19,19 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-// HTML5 блоки для старых браузеров
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-// Общие стили для body
 body {
   line-height: 1;
 }
 
-// Убираем стили для списков
 ol, ul {
   list-style: none;
 }
 
-// Убираем кавычки для цитат
 blockquote, q {
   quotes: none;
 }
@@ -46,10 +42,10 @@ q:before, q:after {
   content: none;
 }
 
-// Сброс для таблиц
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-// Источник карты стилей (если нужно)
+
