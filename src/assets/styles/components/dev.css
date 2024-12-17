@@ -1,4 +1,4 @@
-.block__devcycle {
+.block__dev {
     background-color: #ffffff;
     margin-left: -108px;
     margin-right: -108px;
@@ -8,18 +8,18 @@
     gap: 128px;
 }
 
-.block__devcycle-leftblock {
+.block__dev-leftblock {
     width: 600px;
     display: grid;
     gap: 34px;
 }
 
-.block__devcycle-content {
+.block__dev-content {
     display: grid;
     gap: 32px;
 }
 
-.block__devcycle-title {
+.block__dev-title {
     font-family: "Inter Bold", sans-serif;
     font-weight: 700;
     font-size: 36px;
@@ -28,7 +28,7 @@
     color: #101828;
 }
 
-.block__devcycle-text {
+.block__dev-text {
     font-family: "SF Pro Text Medium", sans-serif;
     font-weight: 500;
     font-size: 15px;
@@ -37,13 +37,13 @@
     color: #101828;
 }
 
-.block__devcycle-tech {
+.block__dev-tech {
     width: 496px;
     display: grid;
     gap: 16px;
 }
 
-.block__devcycle-subtitle {
+.block__dev-subtitle {
     font-family: "SF Pro Display Semibold", sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -52,7 +52,7 @@
     color: #101828;
 }
 
-.block__devcycle-enum {
+.block__dev-enum {
     font-family: "SF Pro Text Regular", sans-serif;
     font-weight: 400;
     font-size: 17px;
@@ -61,15 +61,15 @@
     color: #344054;
 }
 
-.block__devcycle-enum span {
+.block__dev-enum span {
     color: #2d66ee;
 }
 
-.block__devcycle-list {
+.block__dev-list {
     display: grid;
 }
 
-.block__devcycle-item {
+.block__dev-item {
     padding: 12px 0;
     display: flex;
     gap: 12px;
@@ -77,7 +77,7 @@
     width: fit-content;
 }
 
-.block__devcycle-item a{
+.block__dev-item a{
     font-family: "SF Pro Display Regular", sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -88,7 +88,7 @@
     cursor: pointer;
 }
 
-.block__devcycle-item a:hover{
+.block__dev-item a:hover{
     font-family: "SF Pro Display Semibold", sans-serif;
     font-weight: 600;
     color: #101828;
@@ -96,7 +96,7 @@
 }
 
 @media screen and (max-width: 1224px) {
-    .block__devcycle {
+    .block__dev {
         margin-left: -80px;
         margin-right: -80px;
         padding: 80px;
@@ -104,34 +104,34 @@
 }
 
 @media screen and (max-width: 1023px) {
-    .block__devcycle {
+    .block__dev {
         margin-left: -32px;
         margin-right: -32px;
         padding: 32px;
         gap: 82px;
     }
 
-    .block__devcycle-leftblock {
+    .block__dev-leftblock {
         margin-left: 40px;
         width: 320px;
         gap: 32px;
     }
 
-    .block__devcycle-content, .block__devcycle-tech {
+    .block__dev-content, .block__dev-tech {
         width: 320px;
     } 
 
-    .block__devcycle-title {
+    .block__dev-title {
         font-size: 28px;
     }
 
-    .block__devcycle-enum {
+    .block__dev-enum {
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .block__devcycle {
+    .block__dev {
         margin-left: -16px;
         margin-right: -16px;
         padding: 32px 16px;
@@ -139,11 +139,11 @@
         gap: 32px;
     }
 
-    .block__devcycle-leftblock {
+    .block__dev-leftblock {
         margin-left: initial;
     }
 
-    .block__devcycle-enum {
+    .block__dev-enum {
         font-size: 14px;
         width: 278px;
     }
