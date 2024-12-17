@@ -49,53 +49,40 @@ export const TicTacToe = {
   initListeners() {
     this.boxes.forEach(box => {
       box.addEventListener('click', event => {
-        // проверка не закончилась ли игра и не пустой ли блок
-        if (
-          this.isGameEnd || 
-          !this.isBlockEmpty(event.target)
-        ) {
-          return
+        // Проверка, не закончилась ли игра или не пустой ли блок
+        if (this.isGameEnd || !this.isBlockEmpty(event.target)) {
+          return;
         }
-
-        // изменение значения элемента в матрице
-        this.setBlockValue(event.target)
-        // изменение значения элемента в дом дереве
-        this.setBlockDom(event.target)
-        
-        // проверка на победу
-        if (this.checkForWin())
-        {
-          // изменение статуса игры
-          this.setGameEndStatus()
+      
+        // Изменение значения элемента в матрице
+        this.setBlockValue(event.target);
+        // Изменение значения элемента в DOM
+        this.setBlockDom(event.target);
+      
+        // Проверка на победу
+        if (this.checkForWin()) {
+          this.setGameEndStatus();
+          setTimeout(() => {
+            alert('Конец игры: Победил ' + this.getCurrentTurnValue());
+          });
+          return; // Завершаем выполнение, чтобы избежать проверки на ничью
         }
-
-        // проверка на наличие пустых блоков
+      
+        // Проверка на наличие пустых блоков
         if (!this.checkHasEmptyBlocks()) {
-          // изменение статуса игры
-          this.setGameEndStatus()
-
+          this.setGameEndStatus();
           setTimeout(() => {
-            alert('Конец игры: Ничья')
-          })
-          return
+            alert('Конец игры: Ничья');
+          });
+          return;
         }
-
-        // проверка статуса игры
-        if (this.isGameEnd) 
-        {
-          // вывод информации о победителе
-          setTimeout(() => {
-            alert('Конец игры: Победил ' + this.getCurrentTurnValue())
-          })
-        } else {
-          // изменить значение текущего хода в объекте
-          this.changeTurnValue()
-          // изменить значение текущего хода в дом дереве
-          if (this.onMove) {
-            this.onMove(this.isXTurn)
-          }
+      
+        // Изменение текущего хода
+        this.changeTurnValue();
+        if (this.onMove) {
+          this.onMove(this.isXTurn);
         }
-      })
+      });
     })
   },
 
