@@ -63,7 +63,8 @@ export const TicTacToe = {
         this.setBlockDom(event.target)
         
         // проверка на победу
-        if (this.checkForWin()) {
+        if (this.checkForWin())
+        {
           // изменение статуса игры
           this.setGameEndStatus()
         }
@@ -80,7 +81,8 @@ export const TicTacToe = {
         }
 
         // проверка статуса игры
-        if (this.isGameEnd) {
+        if (this.isGameEnd) 
+        {
           // вывод информации о победителе
           setTimeout(() => {
             alert('Конец игры: Победил ' + this.getCurrentTurnValue())
@@ -101,14 +103,16 @@ export const TicTacToe = {
    * Проверка на наличие пустых блоков
    * @returns {boolean} - true если есть пустые блоки, false - если нет
    */
-  checkHasEmptyBlocks() {
+  checkHasEmptyBlocks() 
+  {
     return this.matrix.some(row => row.some(cell => cell === null));
   },
 
   /**
    * Инициализация слушателя клика и вызов колбэка текущего хода
    */
-  startGame() {
+  startGame() 
+  {
     this.initListeners();
     this.onMove(this.isXTurn);
   },
@@ -116,7 +120,8 @@ export const TicTacToe = {
   /**
    * Сброс данных и очищение дом дерева
    */
-  restartGame() {
+  restartGame() 
+  {
     this.isGameEnd = false;
     this.isXTurn = true;
     this.matrix = [
@@ -133,9 +138,9 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @returns {boolean} - true если блок пустой
    */
-  isBlockEmpty(target) {
+  isBlockEmpty(target) 
+  {
     const [row, col] = this.getBlockPosition(target)
-    
     return !this.matrix[row - 1][col - 1]
   },
 
@@ -144,9 +149,9 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @returns {array} - массив со строкой и колонкой target вида [row, col]
    */
-  getBlockPosition(target) {
+  getBlockPosition(target) 
+  {
     const {row, col} = target.dataset
-    
     return [row, col]
   },
   
@@ -157,7 +162,8 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @param {boolean?} clear - если true - отчистить ячейку в матрице
    */
-  setBlockValue(target, clear = false) {
+  setBlockValue(target, clear = false) 
+  {
     const [row, col] = this.getBlockPosition(target);
     this.matrix[row - 1][col - 1] = clear ? null : this.getCurrentTurnValue();
   },
@@ -169,7 +175,8 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @param {boolean?} clear - если true - отчистить target
    */
-  setBlockDom(target, clear = false) {
+  setBlockDom(target, clear = false)
+ {
     target.innerText = clear ? '' : this.getCurrentTurnValue();
   },
 
@@ -177,14 +184,16 @@ export const TicTacToe = {
    * Получение строки с текущем ходом
    * @returns {string} Текущий ход 'X' или 'O'
    */
-  getCurrentTurnValue() {
+  getCurrentTurnValue() 
+  {
     return this.isXTurn ? 'X' : 'O';
   },
 
   /**
    * Изменение текущего хода в данных
    */
-  changeTurnValue() {
+  changeTurnValue() 
+  {
     this.isXTurn = !this.isXTurn;
   },
 
@@ -192,7 +201,8 @@ export const TicTacToe = {
    * Проверка победных комбинаций
    * @returns {boolean} - true если кто-то победил
    */
-  checkForWin() {    
+  checkForWin() 
+  {    
     for (let i = 0; i < this.wonCombinations.length; i++) {
       const [first, second, third] = this.wonCombinations[i]
 
@@ -211,7 +221,8 @@ export const TicTacToe = {
   /**
    * Установить статус об окончании игры
    */
-  setGameEndStatus() {
+  setGameEndStatus() 
+  {
     this.isGameEnd = true;
   }
 }
