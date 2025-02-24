@@ -13,11 +13,7 @@ class Pizza {
             "Сливочная моцарелла": { price: 50, calories: 2 },
             "Сырный борт": { price: { "Маленькая": 150, "Большая": 300 }, calories: 50 },
             "Чедер и пармезан": { price: { "Маленькая": 150, "Большая": 300 }, calories: 50 }
-        };
-        
-        if (!this.types[type] || !this.sizes[size]) {
-            throw new Error("Неверный тип или размер пиццы");
-        }
+        };        
         
         this.type = type;
         this.size = size;
