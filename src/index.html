@@ -1,18 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор выбора пиццы</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-<div class="test" style="color: blue">
-    test
-</div>
+    <div class="container">
+        <h1>Выбор пиццы</h1>
 
-<script src="index.js"></script>
+        <label for="type">Тип пиццы:</label>
+        <select id="type">
+            <option value="Маргарита">Маргарита</option>
+            <option value="Пепперони">Пепперони</option>
+            <option value="Баварская">Баварская</option>
+        </select>
+
+        <label for="size">Размер пиццы:</label>
+        <select id="size">
+            <option value="Маленькая">Маленькая</option>
+            <option value="Большая">Большая</option>
+        </select>
+
+        <div class="toppings">
+            <h3>Топпинги:</h3>
+            <label><input type="checkbox" id="topping1"> Сливочная моцарелла</label>
+            <label><input type="checkbox" id="topping2"> Сырный борт</label>
+            <label><input type="checkbox" id="topping3"> Чедер и пармезан</label>
+        </div>
+
+        <button onclick="addToCart()">Добавить в корзину</button>
+
+        <div class="price-calories">
+            <p id="price">Цена: 0 руб.</p>
+            <p id="calories">Калории: 0 ккал</p>
+        </div>
+    </div>
 </body>
 </html>
