@@ -9,79 +9,80 @@ class Pizza {
             "Большая": { price: 200, calories: 200 },
             "Маленькая": { price: 100, calories: 100 }
         };
-        this.toppings = {
-            "Сливочная моцарелла": { price: 50, calories: 2 },
-            "Сырный борт": { price: { "Маленькая": 150, "Большая": 300 }, calories: 50 },
-            "Чедер и пармезан": { price: { "Маленькая": 150, "Большая": 300 }, calories: 50 }
-        };
-
-        if (!this.types[type] || !this.sizes[size]) {
-            throw new Error("Неверный тип или размер пиццы");
-        }
-
+        this.toppings = [];
         this.type = type;
         this.size = size;
-        this.selectedToppings = [];
     }
 
     addTopping(topping) {
-        if (this.toppings[topping] && !this.selectedToppings.includes(topping)) {
-            this.selectedToppings.push(topping);
-        }
+        this.toppings.push(topping);
     }
 
     removeTopping(topping) {
-        this.selectedToppings = this.selectedToppings.filter(t => t !== topping);
-    }
-
-    getToppings() {
-        return this.selectedToppings;
-    }
-
-    getSize() {
-        return this.size;
-    }
-
-    getType() {
-        return this.type;
+        this.toppings = this.toppings.filter(t => t.name !== topping.name);
     }
 
     calculatePrice() {
         let price = this.types[this.type].price + this.sizes[this.size].price;
-
-        this.selectedToppings.forEach(topping => {
-            let toppingPrice = this.toppings[topping].price;
-            price += typeof toppingPrice === 'object' ? toppingPrice[this.size] : toppingPrice;
+        this.toppings.forEach(t => {
+            price += t.price;
         });
-
         return price;
     }
 
     calculateCalories() {
         let calories = this.types[this.type].calories + this.sizes[this.size].calories;
-
-        this.selectedToppings.forEach(topping => {
-            calories += this.toppings[topping].calories;
+        this.toppings.forEach(t => {
+            calories += t.calories;
         });
-
         return calories;
     }
 }
 
-function updatePriceAndCalories() {
-    const type = document.getElementById("type").value;
-    const size = document.getElementById("size").value;
+let selectedPizza = new Pizza("Маргарита", "Маленькая");
 
-    const pizza = new Pizza(type, size);
+document.querySelectorAll('.pizza-option').forEach(el => {
+    el.addEventListener('click', function () {
+        let type = this.getAttribute("data-type");
+        selectedPizza = new Pizza(type, selectedPizza.size);
+        updateButton();
+    });
+});
 
-    if (document.getElementById("topping1").checked) pizza.addTopping("Сливочная моцарелла");
-    if (document.getElementById("topping2").checked) pizza.addTopping("Сырный борт");
-    if (document.getElementById("topping3").checked) pizza.addTopping("Чедер и пармезан");
+document.querySelectorAll('input[name="size"]').forEach(el => {
+    el.addEventListener('change', function () {
+        selectedPizza.size = this.value;
+        updateButton();
+    });
+});
 
-    document.getElementById("price").textContent = "Цена: " + pizza.calculatePrice() + " руб.";
-    document.getElementById("calories").textContent = "Калории: " + pizza.calculateCalories() + " ккал.";
-}
+document.querySelectorAll('.topping').forEach(el => {
+    el.addEventListener('click', function () {
+        let name = this.getAttribute("data-name");
+        let priceSmall = parseInt(this.getAttribute("data-price-small") || this.getAttribute("data-price"));
+        let priceBig = parseInt(this.getAttribute("data-price-big") || this.getAttribute("data-price"));
+        let calories = parseInt(this.getAttribute("data-cal"));
 
-function addToCart() {
-    updatePriceAndCalories();
+        let topping = {
+            name: name,
+            price: selectedPizza.size === "Большая" ? priceBig : priceSmall,
+            calories: calories
+        };
+
+        if (selectedPizza.toppings.find(t => t.name === name)) {
+            selectedPizza.removeTopping(topping);
+            this.style.border = "1px solid #ddd";
+        } else {
+            selectedPizza.addTopping(topping);
+            this.style.border = "2px solid orange";
+        }
+
+        updateButton();
+    });
+});
+
+function updateButton() {
+    let price = selectedPizza.calculatePrice();
+    let calories = selectedPizza.calculateCalories();
+    document.getElementById("addToCart").innerText = `Добавить в корзину за ${price}₽ (${calories} Ккал)`;
 }

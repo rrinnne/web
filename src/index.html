@@ -3,40 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор выбора пиццы</title>
+    <title>Калькулятор пиццы</title>
     <link rel="stylesheet" href="assets/styles/style.css">
-    <script src="index.js" defer></script>
 </head>
 <body>
+
     <div class="container">
-        <h1>Выбор пиццы</h1>
-
-        <label for="type">Тип пиццы:</label>
-        <select id="type">
-            <option value="Маргарита">Маргарита</option>
-            <option value="Пепперони">Пепперони</option>
-            <option value="Баварская">Баварская</option>
-        </select>
-
-        <label for="size">Размер пиццы:</label>
-        <select id="size">
-            <option value="Маленькая">Маленькая</option>
-            <option value="Большая">Большая</option>
-        </select>
-
-        <div class="toppings">
-            <h3>Топпинги:</h3>
-            <label><input type="checkbox" id="topping1"> Сливочная моцарелла</label>
-            <label><input type="checkbox" id="topping2"> Сырный борт</label>
-            <label><input type="checkbox" id="topping3"> Чедер и пармезан</label>
+        <div class="menu">
+            <div class="pizza-option" data-type="Пепперони">
+                <img src="pepperoni.jpg" alt="Пепперони">
+                <p>Пепперони</p>
+            </div>
+            <div class="pizza-option" data-type="Маргарита">
+                <img src="margarita.webp" alt="Маргарита">
+                <p>Маргарита</p>
+            </div>
+            <div class="pizza-option" data-type="Баварская">
+                <img src="bavarian.webp" alt="Баварская">
+                <p>Баварская</p>
+            </div>
         </div>
 
-        <button onclick="addToCart()">Добавить в корзину</button>
+        <div class="options">
+            <h3>Выберите размер</h3>
+            <div class="size-selector">
+                <label>
+                    <input type="radio" name="size" value="Маленькая" checked> Маленькая
+                </label>
+                <label>
+                    <input type="radio" name="size" value="Большая"> Большая
+                </label>
+            </div>
 
-        <div class="price-calories">
-            <p id="price">Цена: 0 руб.</p>
-            <p id="calories">Калории: 0 ккал</p>
+            <h3>Добавить по вкусу</h3>
+            <div class="toppings">
+                <div class="topping" data-name="Сырный борт" data-price-small="150" data-price-big="300" data-cal="50">
+                    <img src="bortik.png" alt="Сырный борт">
+                    <p>Сырный борт</p>
+                    <p class="price">189₽</p>
+                </div>
+                <div class="topping" data-name="Сливочная моцарелла" data-price="50" data-cal="2">
+                    <img src="mozzarella.png" alt="Сливочная моцарелла">
+                    <p>Сливочная моцарелла</p>
+                    <p class="price">99₽</p>
+                </div>
+                <div class="topping" data-name="Чедер и пармезан" data-price-small="150" data-price-big="300" data-cal="50">
+                    <img src="cheder.png" alt="Чедер и пармезан">
+                    <p>Чедер и пармезан</p>
+                    <p class="price">99₽</p>
+                </div>
+            </div>
+
+            <button id="addToCart">Добавить в корзину за 0₽ (0 Ккал)</button>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
