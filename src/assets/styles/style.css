@@ -71,3 +71,9 @@ body {
     margin-top: 20px;
     cursor: pointer;
 }
+
+.pizza-option.selected {
+    border: 2px solid rgb(253, 152, 0);
+    border-radius: 10px;
+    padding: 5px;
+}

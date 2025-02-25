@@ -43,11 +43,15 @@ let selectedPizza = new Pizza("Маргарита", "Маленькая");
 
 document.querySelectorAll('.pizza-option').forEach(el => {
     el.addEventListener('click', function () {
+        document.querySelectorAll('.pizza-option').forEach(pizza => pizza.classList.remove('selected')); 
+        this.classList.add('selected'); 
+
         let type = this.getAttribute("data-type");
         selectedPizza = new Pizza(type, selectedPizza.size);
         updateButton();
     });
 });
+
 
 document.querySelectorAll('input[name="size"]').forEach(el => {
     el.addEventListener('change', function () {
