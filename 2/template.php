@@ -8,7 +8,6 @@
 
 <body>
     <h1><?= $heading ?></h1>
-    <p>Текущий год: <?= $year ?></p>
     <p>Сейчас: <?= getTimeWithWords() ?></p>
 </body>
 
