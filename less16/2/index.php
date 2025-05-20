@@ -1,6 +1,6 @@
 <?php
 $title = "php";
-$heading = "hello";
+$heading = "Добро пожаловать!";
 $year = date("Y");
 
 function getTimeWithWords()
